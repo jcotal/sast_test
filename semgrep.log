@@ -1,0 +1,19 @@
+2023-01-06 09:57:06,545 - semgrep.commands.ci - INFO - Scan environment:
+2023-01-06 09:57:06,548 - semgrep.commands.ci - INFO -   versions    - semgrep 1.2.1 on python 3.10.8
+2023-01-06 09:57:06,548 - semgrep.commands.ci - INFO -   environment - running in environment git, triggering event is unknown
+2023-01-06 09:57:06,549 - semgrep.commands.ci - INFO -   server      - https://semgrep.dev
+2023-01-06 09:57:06,549 - semgrep.commands.ci - INFO - 
+2023-01-06 09:57:06,608 - semgrep - ERROR - Unable to infer repo_name. Set SEMGREP_REPO_NAME environment variable or run in a valid git project
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/semgrep/commands/wrapper.py", line 35, in wrapper
+    func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/semgrep/commands/ci.py", line 296, in ci
+    metadata_dict = metadata.to_dict()
+  File "/usr/local/lib/python3.10/dist-packages/semgrep/meta.py", line 148, in to_dict
+    "repository": self.repo_name,
+  File "/usr/local/lib/python3.10/dist-packages/semgrep/meta.py", line 83, in repo_name
+    raise Exception(
+Exception: Unable to infer repo_name. Set SEMGREP_REPO_NAME environment variable or run in a valid git project
+2023-01-06 09:57:06,612 - semgrep.metrics - VERBOSE - Not sending pseudonymous metrics since metrics are configured to AUTO and registry usage is False
+2023-01-06 09:57:06,612 - semgrep.error_handler - DEBUG - Sending to fail-open endpoint https://fail-open.prod.semgrep.dev/failure since fail-open is configured to True
+2023-01-06 09:57:06,612 - semgrep.app.auth - DEBUG - Getting API token from settings file
